@@ -1,0 +1,36 @@
+@mixin icon ($content, $fontSize, $fontWeight, $top: '', $right: '', $bottom: '', $left: '') {
+  content: $content;
+  font: {
+    size: $fontSize;
+    family: 'Font Awesome 5 Free', 'Font Awesome 5 Brands';
+    weight: $fontWeight;
+  }
+
+  @if ($top != '' or $right != '' or $bottom != '' or $left != '') {
+    position: absolute;
+  }
+
+  @if ($top != '') {
+    top: $top;
+  }
+
+  @if ($right != '') {
+    right: $right;
+  }
+
+  @if ($bottom != '') {
+    bottom: $bottom;
+  }
+
+  @if ($left != '') {
+    left: $left;
+  }
+}
+
+@mixin flex ($flex-direction: row, $justify-content: normal, $align-items: normal, $flex-wrap: nowrap) {
+  display: flex;
+  flex-direction: $flex-direction;
+  justify-content: $justify-content;
+  align-items: $align-items;
+  flex-wrap: $flex-wrap;
+}

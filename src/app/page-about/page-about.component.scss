@@ -1,0 +1,11 @@
+@import "../../styles/_extends.scss";
+@import "../../styles/_variables.scss";
+
+.page-about {
+}
+
+.page-about-heading {
+  @extend %default-h1;
+  margin: $h-margin;
+  font-weight: $h-font-weight;
+}

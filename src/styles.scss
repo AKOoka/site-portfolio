@@ -1,0 +1,35 @@
+@import "./assets/fontawesome-all.min.css";
+@import "./styles/extends";
+@import "./styles/variables";
+
+html {
+  font-size: 16pt;
+
+  @media screen and (max-width: $screen-biggest-width-max) {
+    font-size: 14pt;
+  }
+
+  @media screen and (max-width: $screen-bigger-width-max) {
+    font-size: 12pt;
+  }
+
+  @media screen and (max-width: $screen-small-width-max) {
+    font-size: 11pt;
+  }
+
+  @media screen and (max-width: $screen-smallest-width-max) {
+    font-size: 10pt;
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  color: $white;
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 300;
+  font-size: 1rem;
+  line-height: 1.65;
+  height: 100vh;
+  background-color: #2d333b;
+}

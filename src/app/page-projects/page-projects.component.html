@@ -1,0 +1,56 @@
+<div class="project-list">
+  <article
+    class="project-card"
+    *ngFor="let info of reposInfo"
+  >
+    <div class="project-card-top">
+      <h2 class="project-name">{{ info.name }}</h2>
+
+      <p
+        *ngIf="info.description !== null"
+        class="project-description"
+      >
+        {{ info.description }}
+      </p>
+    </div>
+    <div class="project-card-bottom">
+      <span
+        *ngIf="info.language !== null"
+        class="project-language"
+        [class]="'project-language-' + info.language.toLowerCase()"
+      >
+        {{ info.language }}
+      </span>
+
+      <section
+        *ngIf="info.topics !== null"
+        class="project-topic-list"
+      >
+        <div
+          class="project-topic"
+          *ngFor="let t of info.topics"
+        >
+          {{ t }}
+        </div>
+      </section>
+
+      <section class="project-link-list">
+        <a
+          *ngIf="info.hrefSite !== null"
+          class="project-link project-link-demo"
+          [href]="info.hrefSite"
+          target="_blank"
+        >
+          Demo
+        </a>
+
+        <a
+          class="project-link project-link-github"
+          target="_blank"
+          [href]="info.hrefGithub"
+          title="Source code"
+        ></a>
+      </section>
+    </div>
+  </article>
+</div>

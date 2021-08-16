@@ -1,0 +1,19 @@
+@import "../../styles/extends.scss";
+@import "../../styles/variables.scss";
+
+.page-home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.page-home-heading {
+  @extend %default-h1;
+  margin: $h-margin;
+  font-weight: $h-font-weight;
+}
+
+.page-home-text {
+  margin: 0;
+  text-align: center;
+}

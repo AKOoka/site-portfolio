@@ -1,0 +1,23 @@
+<app-background></app-background>
+<div class="l-app">
+  <nav class="l-nav-menu">
+    <a
+      *ngFor="let link of navigationLinks"
+      class="nav-menu-link"
+      [class]="link.isActive ? 'nav-menu-link-is-active' : 'nav-menu-link-is-not-active'"
+      (click)="changePath(link.path)"
+    >
+      {{link.text}}
+    </a>
+  </nav>
+  <main class="l-main">
+    <article
+      class="page-wrapper"
+      [class]="pageClosedStatus"
+      [@routeTransition]="pageClosedStatus"
+      (@routeTransition.done)="onRouteTransitionEnd($event)"
+    >
+      <router-outlet #outlet="outlet"></router-outlet>
+    </article>
+  </main>
+</div>

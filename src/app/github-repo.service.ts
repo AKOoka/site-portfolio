@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core'
 import { Endpoints } from '@octokit/types'
 import { Octokit } from 'octokit'
-import { environment } from '../environments/environment'
 
 export interface IRepoInfo {
   name: string
@@ -28,7 +27,7 @@ export class GithubRepoService {
   private _reposInfo: Promise<IRepoInfo[]> | null
 
   constructor () {
-    this._octokit = new Octokit({ auth: environment.githubToken })
+    this._octokit = new Octokit({ auth: process.env.REPOS_ACCESS_TOKEN })
     this._reposInfoRequest = null
     this._readingRequest = false
     this._reposInfo = null
